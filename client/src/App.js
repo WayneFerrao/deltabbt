@@ -8,6 +8,8 @@ import Home from './pages/home';
 import Login from './pages/login';
 import Signup from './pages/signup';
 import Store from './pages/store';
+import Profile from './pages/profile';
+
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/store" component={Store} />
+          <Route exact path="/profile" component={Profile} />
+
 
         </Switch>
       </div>
