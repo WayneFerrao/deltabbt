@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import faker from 'faker';
-import ProfileInfo from './ProfileInfo';
+import ProfileInfo from '../components/ProfileInfo';
 
 export class Profile extends Component {
     render() {
