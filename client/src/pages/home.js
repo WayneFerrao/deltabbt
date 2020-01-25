@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import VenueCard from '../components/VenueCard'
 import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
+import backgroundPic from '../images/background.png'
+
 
 export default class Home extends Component {
     state = {
@@ -17,17 +19,18 @@ export default class Home extends Component {
         .catch(err =>{console.log(err)});
     }
 
-    render() { 
+    render() {
         let recentVenuesMarkup = this.state.venues ? (
             this.state.venues.map(venue => <VenueCard key= {venue.venueId} venueData={venue}/>)
         ): <p> Loading...</p>;
         return (
+            <div styles = {{backgroundImage: 'url(${backgroundPic})'}}>
             <Grid container spacing={10}>
                 <Grid item sm={12} xs={10}>
                       {recentVenuesMarkup}
                 </Grid>
             </Grid>
+            </div>
         )
     }
 }
-
