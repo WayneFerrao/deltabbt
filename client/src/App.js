@@ -15,7 +15,6 @@ import Profile from './pages/profile';
 function App() {
   return (
     <Router>
-    <NavBar/>
       <div className="container">
         <Switch>
           <Route exact path="/" component={Home} />
