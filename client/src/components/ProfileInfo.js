@@ -7,15 +7,34 @@ const ProfileInfo = (props) => {
             <form>
               <label>
                 <p>First Name</p>
-                <TextField id="filled-read-only-input" defaultValue={props.fName}/>
+                <TextField
+                    id="filled-read-only-input"
+                    defaultValue={props.fName}
+                    InputProps={{readOnly: true,}}/>
+
                 <p>Last Name</p>
-                <TextField id="filled-read-only-input" defaultValue={props.lName}/>
+                <TextField
+                    id="filled-read-only-input"
+                    defaultValue={props.lName}
+                    InputProps={{readOnly: true,}}/>
+
                 <p>Phone Number</p>
-                <TextField id="filled-read-only-input" defaultValue={props.phone}/>
+                <TextField
+                    id="filled-read-only-input"
+                    defaultValue={props.phone}
+                    InputProps={{readOnly: true,}}/>
+
                 <p>Email</p>
-                <TextField id="filled-read-only-input" defaultValue={props.email}/>
+                <TextField
+                    id="filled-read-only-input"
+                    defaultValue={props.email}
+                    InputProps={{readOnly: true,}}/>
+                    
                 <p>Password</p>
-                <TextField id="filled-read-only-input" defaultValue={props.password}/>
+                <TextField
+                    id="filled-read-only-input"
+                    defaultValue={props.password}
+                    InputProps={{readOnly: true,}}/>
 
               </label>
             </form>

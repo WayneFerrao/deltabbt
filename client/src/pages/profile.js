@@ -8,14 +8,16 @@ export class Profile extends Component {
 
 
             <div style= {{display:'flex',justifyContent:'center', alignItems:'center'}}>
-                <ProfileInfo
-                pp={faker.image.avatar()}
-                fName="Daddy"
-                lName="Wayne"
-                phone="416-629-6921"
-                email="DaddyWayne@gmail.com"
-                password="***********"/>
-
+                <div>
+                    <h1>Profile</h1>
+                    <ProfileInfo
+                    pp={faker.image.avatar()}
+                    fName="Daddy"
+                    lName="Wayne"
+                    phone="416-629-6921"
+                    email="DaddyWayne@gmail.com"
+                    password="***********"/>
+                </div>
             </div>
         );
     }
