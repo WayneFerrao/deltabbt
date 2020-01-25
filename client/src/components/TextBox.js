@@ -1,12 +1,9 @@
 import React from 'react';
 import {
-  fade,
   ThemeProvider,
-  withStyles,
   makeStyles,
   createMuiTheme,
 } from '@material-ui/core/styles';
-import InputBase from '@material-ui/core/InputBase';
 import TextField from '@material-ui/core/TextField';
 import { blue } from '@material-ui/core/colors';
 
