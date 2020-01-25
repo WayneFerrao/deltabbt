@@ -13,7 +13,6 @@ import Store from './pages/store';
 function App() {
   return (
     <Router>
-    <NavBar/>
       <div className="container">
         <Switch>
           <Route exact path="/" component={Home} />

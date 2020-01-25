@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import TextField from '../components/TextBox'
-import LoginButton from '../components/LoginButton'
+import ColouredButton from '../components/ColouredButton'
 
 export class Login extends Component {
     render() {
         return (
-            <div id = 'TextFields' style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <div id = 'TextFields' style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width:'auto', height: '100%'}}>
                 <div style = {{position: "relative"}}>
                 <br/>
                 <TextField 
                     id = 'UNTextField'
-                    TextFieldLabel = "Username"
+                    TextFieldLabel = "Email"
                 />
                 </div>
                 <br/>
@@ -22,7 +22,9 @@ export class Login extends Component {
                 </div>
                 <br/>
                 <div>
-                <LoginButton/>
+                <ColouredButton
+                    label = 'Login'
+                />
                 </div>
             </div>
         )

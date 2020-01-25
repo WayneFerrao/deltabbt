@@ -18,11 +18,12 @@ const StyledButton = styled(({ color, ...other }) => <Button {...other} />)`
 
 `;
 
-export default function LoginButton() {
+
+export default function LoginButton(props) {
   return (
     <NoSsr>
       <div>
-        <StyledButton color="white">Login</StyledButton>
+        <StyledButton color="white">{props.label}</StyledButton>
       </div>
     </NoSsr>
   );
