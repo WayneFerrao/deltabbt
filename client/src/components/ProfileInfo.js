@@ -2,28 +2,20 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import BG from '../components/background.png'
 import NavBar from '../components/NavBar'
+import Grid from '@material-ui/core/Grid';
+
 const ProfileInfo = (props) => {
     return(
-      <div style = {{backgroundImage: `url(${BG})`, height: '100vh',width: '100%',  backgroundSize: 'cover', fontSize: '20px'}}>
-        <NavBar/>
-        <div style = {{display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh',width: '100%'}}>
-              <img alt="avatar" src ={props.pp}/>
-              <form>
-                <label>
-                  <p style = {{fontWeight: 'bold'}}>First Name</p>
-                  <TextField id="filled-read-only-input" defaultValue={props.fName}/>
-                  <p style = {{fontWeight: 'bold'}}>Last Name</p>
-                  <TextField id="filled-read-only-input" defaultValue={props.lName}/>
-                  <p style = {{fontWeight: 'bold'}}>Phone Number</p>
-                  <TextField id="filled-read-only-input" defaultValue={props.phone}/>
-                  <p style = {{fontWeight: 'bold'}}>Email</p>
-                  <TextField id="filled-read-only-input" defaultValue={props.email}/>
-                  <p style = {{fontWeight: 'bold'}}>Password</p>
-                  <TextField id="filled-read-only-input" defaultValue={props.password}/>
+        <div>
+        <Grid container spacing={2} justify="center">
+            <Grid item md={6} style={{textAlign:'right'}}>
+                <p>{props.title}</p>
+            </Grid>
+            <Grid item md={6}style={{textAlign:'left'}}>
 
-                </label>
-              </form>
-          </div>
+                    <p>{props.content}</p>
+            </Grid>
+        </Grid>
         </div>
     );
 };
