@@ -10,7 +10,9 @@ import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button'; 
 import axios from 'axios';
-import { Typography } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
+import {Link} from 'react-router-dom';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const styles = {
     form:{
@@ -24,9 +26,18 @@ const styles = {
     textField:{
         margin:'20px auto 20px auto'
     },
+    button:{
+        marginTop: 10,
+        position: 'relative'
+    },
     customError:{
         color: 'red',
         fontSize: '0.8rem',
+        marginTop: 10,
+    },
+    progress:{
+        position:'absolute',
+        color: 'black'
     }
 }
 
@@ -42,7 +53,7 @@ export class Login extends Component {
             email: '',
             password: '',
             loading: false,
-            errors:[]
+            errors:{}
         }
     }
 
@@ -113,17 +124,28 @@ export class Login extends Component {
                                 value={this.state.password}
                                 onChange={this.handleChange}
                             />
+                            {errors.error && (
+                                <Typography variant="body2" className={classes.customError} >
+                                    User not found
+                                </Typography>
+                            )}
                             {errors.general && (
                                 <Typography variant="body2" className={classes.customError} >
-                                    {errors.general}
+                                    Invalid credentials
                                 </Typography>
                             )}
                             <Button 
                             type="submit" 
                             variant="contained" 
-                            color="primary">
+                            color="primary"
+                            className={classes.button}
+                            disabled={loading}>
                                 Login
+                                {loading && (
+                                    <CircularProgress size={30} className={classes.progress}/>
+                                )}
                             </Button>
+                            <small>Don't have an account yet?  <Link to="/signup">Sign up here</Link></small>
                     </div>
                     </ThemeProvider>
                 </form>
