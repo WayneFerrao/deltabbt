@@ -1,35 +1,164 @@
-import React, { Component } from 'react'
-import TextField from '../components/TextBox'
-import ColouredButton from '../components/ColouredButton'
+import React, { Component } from 'react';
+import withStyles from '@material-ui/core/styles/withStyles';
+import {
+    ThemeProvider,
+    makeStyles,
+    createMuiTheme,
+  } from '@material-ui/core/styles';
+import { blue } from '@material-ui/core/colors';
+import PropTypes from 'prop-types';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button'; 
+import axios from 'axios';
+import Typography from '@material-ui/core/Typography';
+import {Link} from 'react-router-dom';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
+const styles = {
+    form:{
+        textAlign:'center',
+        display: "flex",
+        flexDirection: "column"
+    }, 
+    image:{
+        margin:'20px auto 20px auto'
+    },
+    textField:{
+        margin:'20px auto 20px auto'
+    },
+    button:{
+        marginTop: 10,
+        position: 'relative'
+    },
+    customError:{
+        color: 'red',
+        fontSize: '0.8rem',
+        marginTop: 10,
+    },
+    progress:{
+        position:'absolute',
+        color: 'black'
+    }
+}
+
+const theme = createMuiTheme({
+    palette: {
+      primary: blue,
+    },
+  });
 export class Login extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+            loading: false,
+            errors:{}
+        }
+    }
+
+    handleSubmit = (event) =>{
+        console.log(event);
+        event.preventDefault();
+        this.setState({
+            loading:true
+        });
+        const userData = {
+            email: this.state.email,
+            password: this.state.password,
+        }
+        console.log(userData);
+        axios.post('/login', userData)
+            .then(res => {
+                console.log(res.data);
+                this.setState({
+                    loading:false
+                });
+                this.props.history.push('/'); // Redirects to homepage
+            })
+            .catch(err =>{
+                console.log(err);
+                this.setState({
+                    errors: err.response.data,
+                    loading: false
+                }) 
+            })  
+    };
+
+    handleChange = (event) =>{
+        console.log(event.target.name);
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+        console.log(this.state.password);
+    }
+
     render() {
+        const {classes}= this.props;
+        const {errors, loading} = this.state;
         return (
             <div id = 'TextFields' style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width:'auto', height: '100%'}}>
-                <div style = {{position: "relative"}}>
-                <br/>
-                <TextField 
-                    id = 'UNTextField'
-                    TextFieldLabel = "Email"
-                />
-                </div>
-                <br/>
-                <div style = {{position: "relative"}}>
-                <TextField
-                    id = 'PWTextField'
-                    TextFieldLabel = "Password"
-                />
-                </div>
+                <form noValidate onSubmit={this.handleSubmit} >
+                    <ThemeProvider theme={theme}>
+                        <div className={classes.form}>
+                            <TextField 
+                                id ="email"
+                                name="email"
+                                type="email"
+                                label="Email"
+                                helperText={errors.email}
+                                className= {classes.textField}
+                                error={errors.email ? true :false}
+                                value={this.state.email}
+                                onChange={this.handleChange}
+                                />
+                            <TextField
+                                id="standard-password-input"
+                                type="password"
+                                name= "password"
+                                type="password"
+                                label="Password"
+                                className= {classes.textField}
+                                helperText={errors.password}
+                                error={errors.password ? true :false}
+                                value={this.state.password}
+                                onChange={this.handleChange}
+                            />
+                            {errors.error && (
+                                <Typography variant="body2" className={classes.customError} >
+                                    User not found
+                                </Typography>
+                            )}
+                            {errors.general && (
+                                <Typography variant="body2" className={classes.customError} >
+                                    Invalid credentials
+                                </Typography>
+                            )}
+                            <Button 
+                            type="submit" 
+                            variant="contained" 
+                            color="primary"
+                            className={classes.button}
+                            disabled={loading}>
+                                Login
+                                {loading && (
+                                    <CircularProgress size={30} className={classes.progress}/>
+                                )}
+                            </Button>
+                            <small>Don't have an account yet?  <Link to="/signup">Sign up here</Link></small>
+                    </div>
+                    </ThemeProvider>
+                </form>
                 <br/>
                 <div>
-                <ColouredButton
-                    label = 'Login'
-                />
                 </div>
             </div>
         )
     }
 }
 
-export default Login
+Login.propTypes={
+    classes:PropTypes.object.isRequired
+};
+export default withStyles(styles)(Login);
 
