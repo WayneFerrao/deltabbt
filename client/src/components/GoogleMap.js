@@ -1,12 +1,13 @@
 import React, { Component, createRef } from 'react'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import API_KEY from '../apiKey';
+
 const mapStyles = {
-    marginTop: 90,
-    marginLeft: 120,
-    width: 550,
-    height: 550,
+    marginTop: '3%',
+    width: '50%',
+    height: '70%',
   };
+
 export class GoogleMap extends Component {
 
     constructor(props) {

@@ -22,15 +22,19 @@ export default class Home extends Component {
     }
 
     render() {
+        document.body.style.overflow = "hidden";
         let recentVenuesMarkup = this.state.venues ? (
             this.state.venues.map(venue => <VenueCard key= {venue.venueId} venueData={venue}/>)
         ): <p> Loading...</p>;
         return (
             <div style = {{backgroundImage: `url(${BG})`, height: '100vh', backgroundSize: 'cover'}}>
-                <NavBar/>
+                <NavBar
+                menuLabel = 'Home'
+                />
             <div styles = {{backgroundImage: 'url(${backgroundPic})'}}>
-            <Grid container spacing={10}>
-                <Grid item sm={4} xs={10}>
+            <br/>
+            <Grid container spacing={10} style = {{marginLeft: '5%'}}>
+                <Grid item sm={4} xs={10} >
                       {recentVenuesMarkup}
                 </Grid>
                 <GoogleMap/>
