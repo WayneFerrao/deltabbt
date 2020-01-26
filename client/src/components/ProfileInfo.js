@@ -7,7 +7,7 @@ const ProfileInfo = (props) => {
       <div style = {{backgroundImage: `url(${BG})`, height: '100vh',width: '100%',  backgroundSize: 'cover', fontSize: '20px'}}>
         <NavBar/>
         <div style = {{display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh',width: '100%'}}>
-              <img alt="avatar" src ={props.pp}/>
+              <img alt="avatar" src ={props.pp} style = {{}}/>
               <form>
                 <label>
                   <p style = {{fontWeight: 'bold'}}>First Name</p>
