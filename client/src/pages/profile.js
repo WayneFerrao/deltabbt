@@ -6,10 +6,6 @@ import Box from '@material-ui/core/Box';
 import BG from '../components/background.png'
 import NavBar from '../components/NavBar'
 
-
-
-
-
 export class Profile extends Component {
     render() {
         return (

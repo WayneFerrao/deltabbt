@@ -8,20 +8,26 @@ const mapStyles = {
     height: 550,
   };
 export class GoogleMap extends Component {
-
+    
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            lat:0,
+            lon:0,
+        };
         this.googleMapRef = React.createRef();
     }
+
+
+
     render() {
         return (
             <Map
                 google={this.props.google}
-                zoom={15}
+                zoom={13}
                 style={mapStyles}
-                initialCenter={{ lat: 47.444, lng: -122.176}}
-            >
+                initialCenter={{ lat: 43.2585919, lng:-79.910951}}
+            > 
                 <Marker position={{ lat: 48.00, lng: -122.00}} />
             </Map>
         )};

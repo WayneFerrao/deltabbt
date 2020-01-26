@@ -13,16 +13,16 @@ import Profile from './pages/profile';
 
 const token = localStorage.FBIdToken;
 let authenticated; 
-if (token){
-  const decodedToken = jwtDecode(token);
-  console.log(decodedToken);
-  if (decodedToken.exp *1000 < Date.now()){
-    window.location.href= '/login';
-    authenticated = false;
-  }else {
-    authenticated = true;
-  }
-}
+// if (token){
+//   const decodedToken = jwtDecode(token);
+//   console.log(decodedToken);
+//   if (decodedToken.exp *1000 < Date.now()){
+//     window.location.href= '/login';
+//     authenticated = false;
+//   }else {
+//     authenticated = true;
+//   }
+// }
 
 function App() {
   return (
@@ -30,8 +30,8 @@ function App() {
       <div className="container">
         <Switch>
           <Route exact path="/" component={Home} />
-          <AuthRoute exact path="/login" component={Login} authenticated={authenticated} />
-          <AuthRoute exact path="/signup" component={Signup} authenticated={authenticated} />
+          <Route exact path="/login" component={Login} authenticated={authenticated} />
+          <Route exact path="/signup" component={Signup} authenticated={authenticated} />
           <Route exact path="/store" component={Store} />
           <Route exact path="/profile" component={Profile} />
         </Switch>
