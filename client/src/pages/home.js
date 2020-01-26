@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import VenueCard from '../components/VenueCard'
 import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
-import backgroundPic from '../images/background.png'
-
+import backgroundPic from '../images/background.png';
+import GoogleMap from '../components/GoogleMap';
 
 export default class Home extends Component {
     state = {
@@ -26,9 +26,10 @@ export default class Home extends Component {
         return (
             <div styles = {{backgroundImage: 'url(${backgroundPic})'}}>
             <Grid container spacing={10}>
-                <Grid item sm={12} xs={10}>
+                <Grid item sm={4} xs={10}>
                       {recentVenuesMarkup}
                 </Grid>
+                <GoogleMap/>
             </Grid>
             </div>
         )
