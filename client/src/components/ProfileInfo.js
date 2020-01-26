@@ -12,7 +12,6 @@ const ProfileInfo = (props) => {
                 <p>{props.title}</p>
             </Grid>
             <Grid item md={6}style={{textAlign:'left'}}>
-
                     <p>{props.content}</p>
             </Grid>
         </Grid>
