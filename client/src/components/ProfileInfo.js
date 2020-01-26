@@ -1,5 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
+import BG from '../components/background.png'
+import NavBar from '../components/NavBar'
 import Grid from '@material-ui/core/Grid';
 
 const ProfileInfo = (props) => {

@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import BG from '../components/background.png'
+import NavBar from '../components/NavBar'
 import VenueCard from '../components/VenueCard'
 import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
-import backgroundPic from '../images/background.png'
-
+import backgroundPic from '../images/background.png';
+import GoogleMap from '../components/GoogleMap';
 
 export default class Home extends Component {
     state = {
@@ -24,12 +26,16 @@ export default class Home extends Component {
             this.state.venues.map(venue => <VenueCard key= {venue.venueId} venueData={venue}/>)
         ): <p> Loading...</p>;
         return (
+            <div style = {{backgroundImage: `url(${BG})`, height: '100vh', backgroundSize: 'cover'}}>
+                <NavBar/>
             <div styles = {{backgroundImage: 'url(${backgroundPic})'}}>
             <Grid container spacing={10}>
-                <Grid item sm={12} xs={10}>
+                <Grid item sm={4} xs={10}>
                       {recentVenuesMarkup}
                 </Grid>
+                <GoogleMap/>
             </Grid>
+            </div>
             </div>
         )
     }
