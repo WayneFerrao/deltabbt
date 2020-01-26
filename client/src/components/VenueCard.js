@@ -11,15 +11,10 @@ import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Box from '@material-ui/core/Box';
 
-
-
-
-
 const styles = {
     card: {
         maxWidth: 345,
     },
-
 }
 
 class VenueCard extends Component {
@@ -30,11 +25,13 @@ class VenueCard extends Component {
 
         return (
 
-            <Card className={classes.card} variant="outlined">
+            <Card className={classes.card} variant="outlined" style={{ background: '#D99E30', borderWidth: '3px'}}>
                 <CardHeader avatar={
                     <Avatar aria-label="logo"
-                    className={classes.avatar}
-                    src={image}/>
+                    className={classes.Avatar}
+                    src={image}
+                    style = {{width: '30%', height: '30%'}}
+                    />
 
                     }
                     action={<IconButton aria-label="add to favorites">
@@ -42,21 +39,18 @@ class VenueCard extends Component {
                     </IconButton>}/>
 
                     <div style={{ width: '100%'}} >
-                      <Box display="flex" p={1} >
-                        <Box p={1} flexGrow={1} >
+                      <Box display="flex" p={1}>
+                        <Box p={1} style = {{fontWeight: 'bold', fontSize: '20px', color: 'white'}}>
                           {name}
                         </Box>
-                        <Box p={1} >
+                        <Box p={1} style = {{fontSize: '16px', color: 'white'}}>
                           {hours}
                         </Box>
                       </Box>
-                      <Box display="flex" p={2}>
+                      <Box display="flex" p={2} style = {{fontSize: '16px', color: 'white'}}>
                       {address}
                   </Box >
                     </div>
-
-
-
             </Card>
         )
     }
