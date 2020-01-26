@@ -1,6 +1,6 @@
 import React, { Component, createRef } from 'react'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-import API_KEY from '../apiKey';
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 const mapStyles = {
     marginTop: '3%',

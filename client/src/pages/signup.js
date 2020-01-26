@@ -192,7 +192,7 @@ export class Signup extends Component {
                                 )}
                             </Button>
                             <small style={{fontWeight:"bold", marginTop:20,color: "#eee"}}>Already have an account? </small> 
-                            <br/>
+                            <br/>   
                             <small style={{fontWeight:"bold", color: "#eee"}}> <Link to="/login">Login here</Link></small>
                     </div>
                     </ThemeProvider>
