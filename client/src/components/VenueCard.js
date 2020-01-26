@@ -10,6 +10,8 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Box from '@material-ui/core/Box';
+import { Link } from 'react-router-dom';
+
 
 const styles = {
     card: {
@@ -17,15 +19,38 @@ const styles = {
     },
 }
 
+const handleClose = () => {
+};
+
 class VenueCard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      bgColor: "#1f1f1f"
+    }
+  }
+
+  
+
+  boxClick = (e) => {
+    if (this.state.bgColor == '#1f1f1f'){
+    this.setState({
+      bgColor: "white"
+    })
+  }
+  else{
+    this.setState({
+      bgColor: "#1f1f1f"
+    })
+  }
+  }
 
     render() {
 
         const {classes, venueData: {name, address, hours, image, venueId}} = this.props;
 
         return (
-
-            <Card className={classes.card} variant="outlined" style={{ background: '#D99E30', borderWidth: '3px'}}>
+            <Card className={classes.card} variant="outlined" style={{ background: '#D99E30', borderWidth: '3px', marginTop: '4px', borderRadius: '20px'}}>
                 <CardHeader avatar={
                     <Avatar aria-label="logo"
                     className={classes.Avatar}
@@ -34,13 +59,13 @@ class VenueCard extends Component {
                     />
 
                     }
-                    action={<IconButton aria-label="add to favorites">
-                      <FavoriteIcon />
+                    action={<IconButton aria-label="add to favorites" onClick={this.boxClick}>
+                      <FavoriteIcon style ={{color: this.state.bgColor}} />
                     </IconButton>}/>
 
                     <div style={{ width: '100%'}} >
                       <Box display="flex" p={1}>
-                        <Box p={1} style = {{fontWeight: 'bold', fontSize: '20px', color: 'white'}}>
+                        <Box p={1} flexGrow={1} style = {{fontWeight: 'bold', fontSize: '20px', color: 'white'}} onClick={handleClose} component = {Link} to="/store">
                           {name}
                         </Box>
                         <Box p={1} style = {{fontSize: '16px', color: 'white'}}>
