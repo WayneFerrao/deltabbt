@@ -33,8 +33,8 @@ export default class Home extends Component {
                 />
             <div styles = {{backgroundImage: 'url(${backgroundPic})'}}>
             <br/>
-            <Grid container spacing={10}>
-                <Grid item sm={4} xs={10}>
+            <Grid container spacing={10} style = {{marginLeft: '5%'}}>
+                <Grid item sm={4} xs={10} >
                       {recentVenuesMarkup}
                 </Grid>
                 <GoogleMap/>
