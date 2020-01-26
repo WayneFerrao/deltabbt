@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
-import Navbar from '../components/NavBar';
+import BG from '../components/background.png'
+import NavBar from '../components/NavBar'
+
 export class Store extends Component {
     render() {
         return (
-            <div>
-                <Navbar menuLabel="Store"/>
-                STORE
+            <div style = {{backgroundImage: `url(${BG})`, height: '100vh', backgroundSize: 'cover'}}>
+                <NavBar
+                    menuLabel = 'Store Menu'
+                />
             </div>
         )
     }
