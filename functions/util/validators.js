@@ -27,9 +27,8 @@ exports.validateSignUpData = (data) => {
     errors.confirmPassword = 'Passwords gotta match bruh';
   }
 
-  if (isEmpty(data.firstName)) errors.handle = 'Bruh you aint got a first??';
-  if (isEmpty(data.lastName)) errors.handle = 'Bruh you aint got a last??';
-  if (isEmpty(data.phone)) errors.handle = 'Bruh you aint got a phone??';
+  if (isEmpty(data.firstName)) errors.firstName = 'Please enter your first name';
+  if (isEmpty(data.lastName)) errors.lastName = 'Please enter your last name';
 
 
   return {

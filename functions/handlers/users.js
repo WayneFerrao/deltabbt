@@ -16,7 +16,6 @@ exports.signUp = (req, res) => {
     confirmPassword: req.body.confirmPassword,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    phone: req.body.phone,
   };
 
   const {valid, errors} = validateSignUpData(newUser);
@@ -27,7 +26,7 @@ exports.signUp = (req, res) => {
   let token; let userId;
   // Go into users collection and see if there's already a user with
   // the phone just passed in by the request.
-  db.doc(`/users/${newUser.phone}`)
+  db.doc(`/users/${newUser.email}`)
       .get()
       .then((doc) => {
         if (doc.exists) {
@@ -51,7 +50,6 @@ exports.signUp = (req, res) => {
       .then((idToken) => {
         token = idToken;
         const userCredentials = {
-          phone: newUser.phone,
           email: newUser.email,
           first:newUser.firstName,
           last:newUser.lastName,
