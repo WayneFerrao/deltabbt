@@ -55,7 +55,7 @@ class VenueCard extends Component {
                     <Avatar aria-label="logo"
                     className={classes.Avatar}
                     src={image}
-                    style = {{width: '30%', height: '30%'}}
+                    style = {{width: '33%', height: '33%'}}
                     />
 
                     }
@@ -64,8 +64,8 @@ class VenueCard extends Component {
                     </IconButton>}/>
 
                     <div style={{ width: '100%'}} >
-                      <Box display="flex" p={1}>
-                        <Box p={1} flexGrow={1} style = {{fontWeight: 'bold', fontSize: '20px', color: 'white'}} onClick={handleClose} component = {Link} to="/store">
+                      <Box display="flex">
+                        <Box p={1} flexGrow={1} style = {{fontWeight: 'bold', fontSize: '24px', color: 'white'}} onClick={handleClose} component = {Link} to="/store">
                           {name}
                         </Box>
                         <Box p={1} style = {{fontSize: '16px', color: 'white'}}>

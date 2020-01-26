@@ -25,11 +25,16 @@ export class GoogleMap extends Component {
         return (
             <Map
                 google={this.props.google}
-                zoom={13}
+                zoom={14}
                 style={mapStyles}
                 initialCenter={{ lat: 43.2585919, lng:-79.910951}}
             > 
-                <Marker position={{ lat: 48.00, lng: -122.00}} />
+                <Marker position={{ lat: 43.261640, lng: -79.907140}} />
+                <Marker position={{ lat: 43.257790, lng: -79.925240}} />
+                <Marker position={{ lat: 43.262199, lng: -79.920013}} />
+
+
+
             </Map>
         )};
         }

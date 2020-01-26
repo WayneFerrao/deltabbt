@@ -12,6 +12,7 @@ import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom';
+import BG from '../components/background.png'
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 const styles = {
@@ -42,7 +43,12 @@ const styles = {
 }
 const theme = createMuiTheme({
     palette: {
-      primary: blue,
+      primary:{ 
+          main: '#e8eaf6'
+      },
+      secondary: {
+          main: '#e8eaf6'
+      },
     },
   });
 export class Signup extends Component {
@@ -103,6 +109,8 @@ export class Signup extends Component {
         const {classes}= this.props;
         const {errors, loading} = this.state;
         return (
+            <div style = {{backgroundImage: `url(${BG})`, height: '100vh', backgroundSize: 'cover'}}>
+
             <div id = 'TextFields' style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width:'auto', height: '100%'}}>
                 <form noValidate onSubmit={this.handleSubmit} >
                     <ThemeProvider theme={theme}>
@@ -183,15 +191,15 @@ export class Signup extends Component {
                                     <CircularProgress size={30} className={classes.progress}/>
                                 )}
                             </Button>
-                            <small>Already have an account? <Link to="/login">Login here</Link></small>
+                            <small style={{fontWeight:"bold", marginTop:20,color: "#eee"}}>Already have an account? </small> 
+                            <br/>
+                            <small style={{fontWeight:"bold", color: "#eee"}}> <Link to="/login">Login here</Link></small>
                     </div>
                     </ThemeProvider>
                 </form>
                 <br/>
-                <div>
-                </div>
             </div>
-                
+        </div>
         )
     }
 }

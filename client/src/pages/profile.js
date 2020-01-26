@@ -24,14 +24,14 @@ export class Profile extends Component {
                             <Grid container spacing={2}>
                             <Grid item md={6} style={{textAlign:'right'}}>
                             <form>
-                                <ProfileInfo title="First Name:" content="Daddy"/>
-                                <ProfileInfo title="Last Name:" content="Wayne"/>
-                                <ProfileInfo title="Email:" content="DaddyWayne@gmail.com"/>
+                                <ProfileInfo title="First Name:" content="Andy"/>
+                                <ProfileInfo title="Last Name:" content="Smith"/>
+                                <ProfileInfo title="Email:" content="andy@gmail.com"/>
                                 <ProfileInfo title="Password:" content="***********"/>
                             </form>
                             </Grid>
                             <Grid item md={6} style={{textAlign:'center'}}>
-                                <img alt="avatar" src ={faker.image.avatar()} style={{width:"50%"}}/>
+                                <img alt="avatar" src ={faker.image.avatar()} style={{width:"50%", borderRadius: "10%"}}/>
                             </Grid>
                             </Grid>
                             <Grid container spacing={2}>
@@ -39,13 +39,13 @@ export class Profile extends Component {
                                <p>Favourites: </p>
                             </Grid>
                             <Grid item md={3}>
-                                <img alt="avatar" src ="https://wba-wpengine.netdna-ssl.com/wp-content/uploads/2017/12/CoCo-Logo--1024x1024.jpg" style={{maxWidth:"70%",maxHeight:"70%"}}/>
+                                <img alt="avatar" src ="https://cocobubbletea.com/wp-content/uploads/2019/01/1.png" style={{maxWidth:"70%",maxHeight:"70%"}}/>
                             </Grid>
                             <Grid item md={3}>
-                                <img alt="avatar" src ="https://wba-wpengine.netdna-ssl.com/wp-content/uploads/2017/12/CoCo-Logo--1024x1024.jpg" style={{maxWidth:"70%",maxHeight:"70%"}}/>
+                                <img alt="avatar" src ="https://www.chatime.com.tw/wp-content/uploads/%E5%8F%B0%E5%8C%97%E6%97%A5%E5%87%BA%E7%8F%8D%E5%A5%B6.png" style={{width:"90px",height:"70%"}}/>
                             </Grid>
                             <Grid item md={3}>
-                                <img alt="avatar" src ="https://wba-wpengine.netdna-ssl.com/wp-content/uploads/2017/12/CoCo-Logo--1024x1024.jpg" style={{maxWidth:"70%",maxHeight:"70%"}}/>
+                                <img alt="avatar" src ="https://www.chatime.com.tw/wp-content/uploads/%E5%A4%AA%E6%A5%B5%E8%8C%B6%E6%8B%BF%E9%90%B5-1-165x314.png" style={{width:"80px",height:"65%"}}/>
                             </Grid>
                             </Grid>
 

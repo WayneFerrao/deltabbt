@@ -13,18 +13,20 @@ import axios from 'axios';
 import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import BG from '../components/background.png'
 
 const styles = {
     form:{
         textAlign:'center',
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
+        marginTop: '70%'
     }, 
     image:{
         margin:'20px auto 20px auto'
     },
     textField:{
-        margin:'20px auto 20px auto'
+        margin:'20px auto 20px auto',
     },
     button:{
         marginTop: 10,
@@ -43,7 +45,12 @@ const styles = {
 
 const theme = createMuiTheme({
     palette: {
-      primary: blue,
+      primary:{ 
+          main: '#e8eaf6'
+      },
+      secondary: {
+          main: '#e8eaf6'
+      },
     },
   });
 export class Login extends Component {
@@ -98,7 +105,16 @@ export class Login extends Component {
         const {classes}= this.props;
         const {errors, loading} = this.state;
         return (
-            <div id = 'TextFields' style={{display: 'flex', flexDirection: 'column', alignItems: 'center', width:'auto', height: '100%'}}>
+            <div style = {{backgroundImage: `url(${BG})`, height: '100vh', backgroundSize: 'cover'}}>
+
+            <div id = 'TextFields' 
+                style={{
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    alignItems: 'center', 
+                    width:'auto', 
+                    height: '100%',
+                    }}>
                 <form noValidate onSubmit={this.handleSubmit} >
                     <ThemeProvider theme={theme}>
                         <div className={classes.form}>
@@ -146,13 +162,16 @@ export class Login extends Component {
                                     <CircularProgress size={30} className={classes.progress}/>
                                 )}
                             </Button>
-                            <small>Don't have an account yet?  <Link to="/signup">Sign up here</Link></small>
+                            <small style={{fontWeight:"bold", marginTop:20,color: "#eee"}}>Don't have an account yet?</small> 
+                            <br/>
+                            <small style={{fontWeight:"bold", color: "#eee"}}> <Link to="/signup">Sign up here</Link></small>
                     </div>
                     </ThemeProvider>
                 </form>
                 <br/>
                 <div>
                 </div>
+            </div>
             </div>
         )
     }

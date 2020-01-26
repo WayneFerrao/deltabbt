@@ -4,7 +4,6 @@ import NavBar from '../components/NavBar'
 import VenueCard from '../components/VenueCard'
 import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
-import backgroundPic from '../images/background.png';
 import GoogleMap from '../components/GoogleMap';
 
 export default class Home extends Component {
