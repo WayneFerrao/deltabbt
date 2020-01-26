@@ -1,6 +1,5 @@
 import React, { Component, createRef } from 'react'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-import API_KEY from '../apiKey';
 const mapStyles = {
     marginTop: 90,
     marginLeft: 120,
@@ -8,7 +7,7 @@ const mapStyles = {
     height: 550,
   };
 export class GoogleMap extends Component {
-    
+
     constructor(props) {
         super(props);
         this.state = {};
@@ -21,9 +20,10 @@ export class GoogleMap extends Component {
                 zoom={15}
                 style={mapStyles}
                 initialCenter={{ lat: 47.444, lng: -122.176}}
-            > 
+            >
                 <Marker position={{ lat: 48.00, lng: -122.00}} />
             </Map>
         )};
         }
-export default GoogleApiWrapper({apiKey:API_KEY})(GoogleMap);
+export default GoogleApiWrapper({apiKey:"AIzaSyAagi5BC0btEb767vc2-mx7HxVBKAjaEJU"
+})(GoogleMap);

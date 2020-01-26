@@ -3,12 +3,18 @@ import faker from 'faker';
 import ProfileInfo from '../components/ProfileInfo';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import BG from '../components/background.png'
+import NavBar from '../components/NavBar'
+
+
 
 
 
 export class Profile extends Component {
     render() {
         return (
+            <div style = {{backgroundImage: `url(${BG})`, height: '100vh', backgroundSize: 'cover'}}>
+            <NavBar/>
 
             <Grid container spacing={1}>
             <Grid item md={2}/>
@@ -18,13 +24,12 @@ export class Profile extends Component {
                 <div>
                     <div style={{fontSize:20}}>
 
-                            <h1 style={{textAlign:'center'}}>Profile</h1>
+                            <h1 style={{textAlign:'center',color:'#5d1504'}}>Profile</h1>
                             <Grid container spacing={2}>
                             <Grid item md={6} style={{textAlign:'right'}}>
                             <form>
                                 <ProfileInfo title="First Name:" content="Daddy"/>
                                 <ProfileInfo title="Last Name:" content="Wayne"/>
-                                <ProfileInfo title="Phone Number:" content="416-629-6921"/>
                                 <ProfileInfo title="Email:" content="DaddyWayne@gmail.com"/>
                                 <ProfileInfo title="Password:" content="***********"/>
                             </form>
@@ -54,6 +59,7 @@ export class Profile extends Component {
 
             <Grid item md={2}/>
             </Grid>
+            </div>
         );
     }
 }
