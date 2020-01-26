@@ -3,6 +3,7 @@ import BG from '../components/background.png'
 import NavBar from '../components/NavBar'
 import SelectBox from '../components/SelectBoxes'
 import Grid from '@material-ui/core/Grid'
+import Button from '@material-ui/core/Button'
 
 export class Store extends Component {
     
@@ -60,6 +61,14 @@ export class Store extends Component {
             </Grid>
             <Grid item md={4}/>
             </Grid>
+
+            <Button 
+            variant="contained" 
+            color="primary"
+            style ={{background: "inherit",  marginLeft: '19%', marginTop: '2%'}}
+            >
+                Place Order
+            </Button>
             </div>
         )
     }
